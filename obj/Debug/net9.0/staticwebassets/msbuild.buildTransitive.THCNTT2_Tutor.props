@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\THCNTT2_Tutor.props" />
+</Project>

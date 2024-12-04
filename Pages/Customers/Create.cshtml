@@ -1,0 +1,57 @@
+@page
+@model THCNTT2_Tutor.Pages.Customers.Create
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <div class="col-md-8 mx-auto rounded border p-4">
+        <h2 class="text-center m-5">New Customer</h2>
+
+        @if (Model.ErrorMessage.Length > 0) {
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>@Model.ErrorMessage</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
+        <form method="post">
+            <div class="row- mb-3">
+                <label class="col-sm-4 col-form-label">Name*</label>
+                <div class="col-sm-8">
+                    <input asp-for="name" class="form-control" />
+                    <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+
+            <div class="row- mb-3">
+                <label class="col-sm-4 col-form-label">Address*</label>
+                <div class="col-sm-8">
+                    <input asp-for="address" class="form-control" />
+                    <span asp-validation-for="address" class="text-danger"></span>
+            </div>
+
+            <div class="row- mb-3">
+                <label class="col-sm-4 col-form-label">Phone*</label>
+                <div class="col-sm-8">
+                    <input asp-for="phone" class="form-control" />
+                    <span asp-validation-for="phone" class="text-danger"></span>
+            </div>
+
+            <div class="row- mb-3">
+                <label class="col-sm-4 col-form-label">Email*</label>
+                <div class="col-sm-8">
+                    <input asp-for="email" class="form-control" />
+                    <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            
+            <div class="row">
+                <div class="offset-sm-4 col-sm-4 d-grid">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <div class="col-sm-4 d-grid">
+                    <a class="btn btn-out;ine-primary" href="/Customer/Index" role="button">Cancel</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

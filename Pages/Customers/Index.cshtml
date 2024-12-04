@@ -1,0 +1,46 @@
+@page
+@model THCNTT2_Tutor.Pages.Customers.Index
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2 class="text-center mb-3">List of Customers</h2>
+
+<a class="btn btn-primary mb-3" href="/Customers/Create">New Customers</a>
+
+@* <form method="get">
+    <div class="form-group">
+        <label for="searchId">Search</label>
+        <input type="text" class="form-control" name="searchId" value="@Model.SearchId" style="width: 50px;">
+    </div>
+    <a class="btn btn-primary btn-sm" href="/Customers/Search?id=@Model.SearchId">Search</a>
+</form> *@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach(var customer in Model.CustomersList) {
+            <tr>
+                <td>@customer.id</td>
+                <td>@customer.name</td>
+                <td>@customer.email</td>
+                <td>@customer.phone</td>
+                <td>@customer.address</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Customers/Edit?id=@customer.id">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="/Customers/Delete?id=@customer.id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
